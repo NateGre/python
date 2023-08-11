@@ -35,7 +35,10 @@ for month in key_val:
 
 date = int(month + input_day)
 
-if month in month_day_31 and input_day > 31:
+if input_day <= 0:
+    print("Invalid")
+
+elif month in month_day_31 and input_day > 31:
     print("Invalid")
 
 elif month in month_day_30 and input_day > 30:
