@@ -1,5 +1,8 @@
 import random
+
+#initalize while loop
 usr_prompt = 'Y'
+#create dictionary of totals with empty values
 total_sums = {
                 "2":'', "3":'',
                 "4":'', "5":'',
@@ -10,6 +13,8 @@ total_sums = {
              }
 
 
+#adds the string '*' to the corresponding key in the total_sums dict
+#ex. if roll_total = 6 is rolled twice the value for total_sums["6"] is '**'
 while usr_prompt == 'Y':
     num_rolls = int(input('Enter number of rolls:\n'))
     if num_rolls >= 1:
@@ -43,6 +48,7 @@ while usr_prompt == 'Y':
     else:
         print('Invalid number of rolls. Try again.')
 
+#print results
     print('\nDice roll statistics:')
     print('2s:', total_sums["2"])
     print('3s:', total_sums["3"])
@@ -55,10 +61,12 @@ while usr_prompt == 'Y':
     print('10s:', total_sums["10"])
     print('11s:', total_sums["11"])
     print('12s:', total_sums["12"])
-    
+
+#ask user if they want to continue
     usr_prompt = input('Continue? Y or N:')
     if usr_prompt == 'N':
         exit()
+#if user answered 'Y' ask if they want to reset values inside of total_sums
     reset_stats = input('Reset stats? Y or N:')
     if reset_stats == 'Y':
         total_sums = {
